@@ -46,7 +46,7 @@
   programs.git = {
     enable = true;
     aliases = { checkotu = "checkout"; };
-    ignores = [ ".DS_Store" ".envrc" ".local*" ];
+    ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" ];
     signing.key = null;
     signing.signByDefault = true;
     userEmail = "akupila@gmail.com";
