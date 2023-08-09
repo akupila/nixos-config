@@ -9,11 +9,12 @@
       gopls
       jq
       jump
+      lua-language-server
       neovim
-      nodejs_18 # LTS
       nil
       nixpkgs-fmt
-      lua-language-server
+      nodejs_18 # LTS
+      ripgrep
     ];
   };
 
