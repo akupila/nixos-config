@@ -4,7 +4,6 @@ return {
     { 'nvim-lua/popup.nvim' },
     { 'BurntSushi/ripgrep' },
     { 'nvim-lua/plenary.nvim' },
-    { 'nvim-lua/plenary.nvim' },
   },
   cmd = 'Telescope',
   init = function()

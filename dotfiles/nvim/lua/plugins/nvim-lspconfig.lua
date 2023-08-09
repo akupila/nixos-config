@@ -1,5 +1,8 @@
 return {
   "neovim/nvim-lspconfig",
+  dependencies = {
+    "lukas-reineke/lsp-format.nvim",
+  },
   config = function()
     local lspconfig = require("lspconfig")
 
@@ -48,7 +51,9 @@ return {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
         local opts = { buffer = ev.buf }
+
         local client = vim.lsp.get_client_by_id(ev.data.client_id)
+        require('lsp-format').on_attach(client)
 
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
         vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
@@ -64,16 +69,6 @@ return {
         vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, opts)
         vim.keymap.set({ 'n', 'v' }, '<leader>ca', vim.lsp.buf.code_action, opts)
         vim.keymap.set('n', 'gr', vim.lsp.buf.references, opts)
-
-        if client.supports_method('textDocument/formatting') then
-          vim.api.nvim_create_autocmd("BufWritePre", {
-            group = vim.api.nvim_create_augroup('LspFormat', {}),
-            buffer = ev.buf,
-            callback = function()
-              vim.lsp.buf.format { async = false }
-            end
-          })
-        end
       end,
     })
   end
