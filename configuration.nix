@@ -65,6 +65,7 @@
     ];
     casks = [
       "1password"
+      "firefox"
       "rectangle"
       "slack"
       { name = "spotify"; args.require_sha = false; }
