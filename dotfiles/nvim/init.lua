@@ -74,6 +74,9 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
+-- Allow saving with uppercase W so that shift-; for : doesn't accidentally also capitalize w
+vim.api.nvim_create_user_command('W', 'w', {})
+
 -- Plugins --
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
