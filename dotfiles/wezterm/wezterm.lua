@@ -6,7 +6,7 @@ config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false
 
 config.font = wezterm.font {
-  family = 'SauceCodePro Nerd Font',
+  family = 'Hack Nerd Font',
 }
 config.font_size = 13.0
 config.adjust_window_size_when_changing_font_size = false

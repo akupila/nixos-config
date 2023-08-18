@@ -41,6 +41,7 @@
           # https://github.com/NixOS/nixpkgs/blob/master/pkgs/data/fonts/nerdfonts/shas.nix
           "JetBrainsMono" # Default for WezTerm
           "SourceCodePro"
+          "Hack"
         ];
       })
     ];
