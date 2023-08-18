@@ -7,6 +7,7 @@
       gnupg
       go
       gopls
+      graphviz
       jq
       jump
       lua-language-server
