@@ -82,6 +82,11 @@
         src = ./dotfiles/zsh;
         file = "p10k.zsh";
       }
+      {
+        name = "gocover";
+        src = ./dotfiles/zsh;
+        file = "gocover.zsh";
+      }
     ];
     shellAliases = {
       "." = "pwd";
