@@ -205,6 +205,9 @@
   # The platform the configuration will be used on.
   nixpkgs.hostPlatform = "aarch64-darwin";
 
+  # Enable touch id for sudo.
+  security.pam.enableSudoTouchIdAuth = true;
+
   # Used for backwards compatibility, check changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
