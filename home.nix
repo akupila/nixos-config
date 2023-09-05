@@ -115,6 +115,15 @@
 
       # Do not exit on ctrl-d
       setopt ignore_eof
+
+      # Keys
+      bindkey '^[[3~'   delete-char   # Delete
+      bindkey '^[[C'    forward-char  # Right
+      bindkey '^[[D'    backward-char # Left
+      bindkey '^[[1;5D' backward-word # Ctrl-Left
+      bindkey '^[[1;5C' forward-word  # Ctrl-Right
+      bindkey '^H' backward-kill-word # Ctrl-H deletes word
+      bindkey '^[[Z' undo             # Shift-Tab
     '';
   };
 }
