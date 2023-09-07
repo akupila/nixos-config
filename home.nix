@@ -6,7 +6,7 @@
     packages = with pkgs; [
       cargo
       gnupg
-      go
+      go_1_21
       gopls
       graphviz
       jq
