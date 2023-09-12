@@ -17,6 +17,7 @@
       nixpkgs-fmt
       nodejs_18 # LTS
       ripgrep
+      yubikey-manager
     ];
   };
 
