@@ -10,15 +10,13 @@ return {
     vim.g.loaded_netrwPlugin = 1
 
     vim.keymap.set("n", "<C-n>", "<cmd>Neotree toggle<cr>")
+    vim.keymap.set("n", "<leader><C-n>", "<cmd>Neotree reveal<cr>")
   end,
   config = function()
     vim.cmd([[ let g:neo_tree_remove_legacy_commands = 1 ]])
 
     require("neo-tree").setup({
       filesystem = {
-        follow_current_file = {
-          enabled = true,
-        },
         filtered_items = {
           visible = true,
           never_show = {

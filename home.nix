@@ -2,21 +2,24 @@
 
 {
   home = {
-    stateVersion = "23.11";
+    stateVersion = "23.05";
     packages = with pkgs; [
-      cargo
+      # go_1_21
+      # jq
+      # lua-language-server
+      # nodePackages_latest.typescript-language-server
+      # nodejs_18 # LTS
+      # prettierd
+      # yarn
+      coreutils
+      git
       gnupg
-      go_1_21
-      gopls
-      graphviz
-      jq
       jump
-      lua-language-server
       neovim
       nil
       nixpkgs-fmt
-      nodejs_18 # LTS
       ripgrep
+      unixtools.watch
       yubikey-manager
     ];
   };
@@ -30,8 +33,8 @@
       source = ./dotfiles/wezterm;
       recursive = true;
     };
-    rectangle = {
-      source = ./dotfiles/rectangle;
+    prettier = {
+      source = ./dotfiles/prettier;
       recursive = true;
     };
   };
@@ -49,8 +52,15 @@
 
   programs.git = {
     enable = true;
-    aliases = { checkotu = "checkout"; };
-    ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" ];
+    aliases = {
+      checkotu = "checkout";
+      recent = "for-each-ref --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads";
+    };
+    ignores = [
+      ".DS_Store"
+      ".envrc"
+      ".direnv"
+    ];
     signing.key = null;
     signing.signByDefault = true;
     userEmail = "akupila@gmail.com";
@@ -66,6 +76,7 @@
       pretty = {
         minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
       };
+      url."git@github.com:".insteadOf = "https://github.com";
     };
   };
 
@@ -112,7 +123,7 @@
     '';
     initExtra = ''
       # jump shell
-      eval $(${pkgs.jump}/bin/jump shell zsh)
+      eval $(jump shell zsh)
 
       # Do not exit on ctrl-d
       setopt ignore_eof
@@ -125,6 +136,8 @@
       bindkey '^[[1;5C' forward-word  # Ctrl-Right
       bindkey '^H' backward-kill-word # Ctrl-H deletes word
       bindkey '^[[Z' undo             # Shift-Tab
+
+      export PATH=$PATH:~/go/bin
     '';
   };
 }

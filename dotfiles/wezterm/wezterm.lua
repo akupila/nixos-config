@@ -1,6 +1,8 @@
 local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
+config.scrollback_lines = 10000
+
 config.color_scheme = 'ayu'
 config.tab_bar_at_bottom = true
 config.use_fancy_tab_bar = false

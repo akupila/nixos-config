@@ -23,7 +23,7 @@ vim.keymap.set('v', '>', '>gv')
 vim.keymap.set('n', '*', ':let start_pos = winsaveview()<CR>*:call winrestview(start_pos)<cr>')
 
 -- Close buffer without closing split
-vim.keymap.set('n', '<leader>x', ':bprevious | bdelete #<cr>')
+vim.keymap.set('n', '<C-q>', ':bprevious | bwipeout #<cr>')
 
 -- Show diagnostics
 vim.keymap.set('n', '<C-k>', '<cmd>lua vim.diagnostic.open_float()<cr>')
@@ -49,6 +49,9 @@ vim.o.swapfile = false
 vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.updatetime = 250
+vim.o.magic = false
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 vim.opt.listchars = { tab = '⎸ ' }
 
