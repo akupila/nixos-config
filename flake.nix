@@ -15,26 +15,45 @@
 
   outputs = inputs@{ darwin, nixpkgs, home-manager, ... }: {
 
-    darwinConfigurations = {
+    formatter.aarch64-darwin = nixpkgs.legacyPackages.aarch64-darwin.nixpkgs-fmt;
 
-      # Personal laptop.
-      "Anttis-MBP" = darwin.lib.darwinSystem {
-        specialArgs = {
-          inherit nixpkgs;
-        };
-        modules = [
-          ./modules/darwin.nix
-          home-manager.darwinModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.akupila = import ./home.nix;
-            };
-          }
-        ];
+    # Personal laptop
+    darwinConfigurations.Anttis-MBP = darwin.lib.darwinSystem {
+      specialArgs = {
+        inherit inputs;
+        username = "akupila";
       };
-
+      modules = [
+        home-manager.darwinModules.home-manager
+        ./modules/common.nix
+        ./modules/darwin.nix
+      ];
     };
+
+      # Work laptop
+    darwinConfigurations.antti-stream = darwin.lib.darwinSystem {
+      specialArgs = {
+        inherit inputs;
+        username = "akupila";
+      };
+      modules = [
+        home-manager.darwinModules.home-manager
+        ./modules/common.nix
+        ./modules/darwin.nix
+      ];
+    };
+
+    # Linux laptop
+    nixosConfigurations.akupila-xps = nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      # specialArgs = {
+      #   username = "akupila";
+      # };
+      modules = [
+        home-manager.darwinModules.home-manager
+        ./modules/common.nix
+      ];
+    };
+
   };
 }
