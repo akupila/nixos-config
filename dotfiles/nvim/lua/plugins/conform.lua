@@ -9,10 +9,11 @@ return {
       typescript = { { "prettierd", "prettier" } },
     },
     format_on_save = {
-      timeout_ms = 500,
+      timeout_ms = 2500,
       lsp_fallback = true,
     },
-    ormatters = {
+    log_level = vim.log.levels.DEBUG,
+    formatters = {
       shfmt = {
         prepend_args = { "-i", "2" },
       },

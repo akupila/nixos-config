@@ -53,7 +53,11 @@ vim.o.magic = false
 vim.o.splitbelow = true
 vim.o.splitright = true
 
-vim.opt.listchars = { tab = '⎸ ' }
+vim.opt.listchars = {
+  tab = '⎸ ',
+  trail = '✚',
+  nbsp = '.',
+}
 
 vim.o.tabstop = 2
 vim.o.softtabstop = 2

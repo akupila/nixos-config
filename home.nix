@@ -4,7 +4,7 @@
   home = {
     stateVersion = "23.05";
     packages = with pkgs; [
-      # go_1_21
+      go_1_21
       # jq
       # lua-language-server
       # nodePackages_latest.typescript-language-server
@@ -60,6 +60,7 @@
       ".DS_Store"
       ".envrc"
       ".direnv"
+      "shell.nix"
     ];
     signing.key = null;
     signing.signByDefault = true;
