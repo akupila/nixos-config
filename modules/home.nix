@@ -14,6 +14,7 @@ in
       jump
       neovim
       ripgrep
+      yubikey-manager
     ];
 
     stateVersion = "23.11";
