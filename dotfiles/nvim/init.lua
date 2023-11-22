@@ -51,6 +51,7 @@ vim.o.undofile = true
 vim.o.updatetime = 250
 
 vim.opt.listchars = { tab = '⎸ ' }
+vim.o.magic = false
 
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
