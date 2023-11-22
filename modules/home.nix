@@ -7,7 +7,6 @@ let
   };
 in
 {
-
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
@@ -40,7 +39,7 @@ in
     git = {
       enable = true;
       aliases = { checkotu = "checkout"; };
-      ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" ];
+      ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ];
       signing.key = null;
       signing.signByDefault = true;
       userEmail = "akupila@gmail.com";
