@@ -52,6 +52,8 @@ vim.o.updatetime = 250
 
 vim.opt.listchars = { tab = '⎸ ' }
 vim.o.magic = false
+vim.o.splitbelow = true
+vim.o.splitright = true
 
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
