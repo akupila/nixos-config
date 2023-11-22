@@ -26,11 +26,6 @@ return {
           return vim_item
         end
       },
-      -- snippet = {
-      --   expand = function(args)
-      --     require('luasnip').lsp_expand(args.body)
-      --   end,
-      -- },
       sources = cmp.config.sources({
         { name = "nvim_lsp", group_index = 1 },
         { name = "path",     group_index = 2 },

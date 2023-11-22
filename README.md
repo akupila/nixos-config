@@ -42,19 +42,9 @@ Clone this repo:
 
 _We don't **need** the nix shell anymore, so we could also `exit` out._
 
-**Optional:** Some GUI apps are installed using [Homebrew], so they end up
-`/Applications`. This is optional - if homebrew is not installed, these apps
-are just not installed. Here, we'll install Homebrew first so we get the full
-setup:
-
-```zsh
-[nix-shell:~/nixos-config]$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-```
-
 The config has the name of the machine, which won't match the VM. Replace
 `Anttis-MBP` with `Demos-Virtual-Machine` in `~/nixos-config/flake.nix` and
-`akupila` with `demo` in `flake.nix` and `configuration.nix`. Now we can
-bootstrap the new system:
+`akupila` with `demo` in `flake.nix`. Now we can bootstrap the new system:
 
 ```
 [nix-shell:~/nixos-config]$ nix run nix-darwin --extra-experimental-features 'nix-command flakes' -- switch --flake .
