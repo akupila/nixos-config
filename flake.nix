@@ -54,17 +54,18 @@
         ];
       };
 
-      # # Linux laptop
-      # nixosConfigurations.akupila-xps = nixpkgs.lib.nixosSystem {
-      #   system = "x86_64-linux";
-      #   specialArgs = {
-      #     username = "akupila";
-      #   };
-      #   modules = [
-      #     home-manager.darwinModules.home-manager
-      #     ./modules/default.nix
-      #   ];
-      # };
+      # Linux laptop
+      nixosConfigurations.akupila-xps = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        specialArgs = {
+          inherit inputs user;
+        };
+        modules = [
+          home-manager.darwinModules.home-manager
+          ./modules/default.nix
+          ./modules/personal.nix
+        ];
+      };
 
     };
 }
