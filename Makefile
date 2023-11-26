@@ -1,6 +1,12 @@
+OS = $(shell uname -s)
+
 .PHONY: switch
 switch:
+ifeq ($(OS),Darwin)
 	darwin-rebuild switch --flake .
+else ifeq ($(OS),Linux)
+	sudo nixos-rebuild switch --flake .
+endif
 
 .PHONY: clean
 clean:
