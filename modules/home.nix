@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 let
   dotfiles = path: {
@@ -122,6 +122,8 @@ in
         bindkey '^[[1;5C' forward-word  # Ctrl-Right
         bindkey '^H' backward-kill-word # Ctrl-H deletes word
         bindkey '^[[Z' undo             # Shift-Tab
+
+        export PATH=$PATH:~/go/bin
       '';
     };
   };
