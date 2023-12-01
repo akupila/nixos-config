@@ -5,17 +5,27 @@ return {
   opts = {
     formatters_by_ft = {
       sh = { { "shfmt" } },
-      javascript = { { "prettierd", "prettier" } },
-      typescript = { { "prettierd", "prettier" } },
+      javascript = { { "biome" } },
+      typescript = { { "biome" } },
     },
     format_on_save = {
       timeout_ms = 2500,
       lsp_fallback = true,
     },
-    log_level = vim.log.levels.DEBUG,
     formatters = {
       shfmt = {
         prepend_args = { "-i", "2" },
+      },
+      biome = {
+        args = {
+          "format",
+          "--stdin-file-path", "$FILENAME",
+          "--indent-style", "space",
+          "--indent-size", "2",
+          "--quote-style", "single",
+          "--trailing-comma", "all",
+          "--line-width", "90",
+        },
       },
     },
   },
