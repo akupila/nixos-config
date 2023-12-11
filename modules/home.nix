@@ -59,6 +59,7 @@ in
         pretty = {
           minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
         };
+        url."git@github.com:".insteadOf = "https://github.com";
       };
     };
 
