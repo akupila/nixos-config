@@ -10,6 +10,7 @@ in
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
+      go_1_21
       gnupg
       jump
       neovim
