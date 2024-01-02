@@ -7,6 +7,7 @@ return {
       sh = { { "shfmt" } },
       javascript = { { "biome" } },
       typescript = { { "biome" } },
+      typescriptreact = { { "biome" } },
       sql = { { "pg_format" } },
     },
     format_on_save = {
