@@ -39,6 +39,7 @@ return {
           mappings = {
             ["<F5>"] = "refresh",
             ["o"] = "open",
+            ['/'] = "noop", -- Use built-in search instead
           },
         },
       },
