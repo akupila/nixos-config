@@ -80,6 +80,21 @@ config.keys = {
     mods = 'SUPER|SHIFT',
     action = wezterm.action { SplitVertical = { domain = "CurrentPaneDomain" } },
   },
+
+  -- Rename tab title with ctrl-shift-e
+  -- https://github.com/wez/wezterm/issues/522#issuecomment-1496894508
+  {
+    key = 'E',
+    mods = 'CTRL|SHIFT',
+    action = wezterm.action.PromptInputLine {
+      description = 'Enter new name for tab',
+      action = wezterm.action_callback(function(window, _, line)
+        if line then
+          window:active_tab():set_title(line)
+        end
+      end),
+    },
+  },
 };
 
 for i = 1, 9 do
