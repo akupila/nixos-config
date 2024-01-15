@@ -106,6 +106,9 @@ in
         [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
       '';
       initExtra = ''
+        autoload -z edit-command-line
+        zle -N edit-command-line
+
         # jump shell
         eval $(${pkgs.jump}/bin/jump shell zsh)
 
@@ -120,6 +123,8 @@ in
         bindkey '^[[1;5C' forward-word  # Ctrl-Right
         bindkey '^H' backward-kill-word # Ctrl-H deletes word
         bindkey '^[[Z' undo             # Shift-Tab
+
+        bindkey "^V^V" edit-command-line
 
         export PATH=$PATH:~/go/bin
       '';
