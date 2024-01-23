@@ -57,6 +57,12 @@ in
         rebase.autosquash = true;
         rebase.autostash = true;
         format.pretty = "minimal";
+        merge = {
+          tool = "opendiff";
+        };
+        mergetool = {
+          keepBackup = false;
+        };
         pretty = {
           minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
         };
