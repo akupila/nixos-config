@@ -1,7 +1,6 @@
-function gocover() {
-  PKG="${1:-./...}"
+function gocover () {
   FILE=$(mktemp)
-  go test -coverprofile=$FILE $PKG
+  go test -coverprofile=$FILE $@
   go tool cover -html=$FILE
   rm $FILE
 }
