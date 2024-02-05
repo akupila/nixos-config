@@ -11,11 +11,11 @@ in
     # Binaries installed for current user.
     packages = with pkgs; [
       gnupg
-      go_1_21
+      go
       jq
       jump
       neovim
-      nodejs_21
+      nodejs
       ripgrep
       yubikey-manager
     ];
