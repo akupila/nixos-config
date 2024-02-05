@@ -10,10 +10,12 @@ in
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
-      go_1_21
       gnupg
+      go_1_21
+      jq
       jump
       neovim
+      nodejs_21
       ripgrep
       yubikey-manager
     ];
