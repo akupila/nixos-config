@@ -109,10 +109,6 @@ in
         ignorePatterns = [ "exit" "rm *" ];
         ignoreSpace = true;
       };
-      initExtraBeforeCompInit = ''
-        P10K_INSTANT_PROMPT="$HOME/.cache/p10k-instant-prompt-$USER.zsh"
-        [[ ! -r "$P10K_INSTANT_PROMPT" ]] || source "$P10K_INSTANT_PROMPT"
-      '';
       initExtra = ''
         autoload -z edit-command-line
         zle -N edit-command-line
