@@ -111,9 +111,6 @@ in
         autoload -z edit-command-line
         zle -N edit-command-line
 
-        # jump shell
-        eval $(${pkgs.jump}/bin/jump shell zsh)
-
         # Do not exit on ctrl-d
         setopt ignore_eof
 
@@ -129,6 +126,9 @@ in
         bindkey "^V^V" edit-command-line
 
         export PATH=$PATH:~/go/bin
+
+        # Jump shell
+        eval "$(${pkgs.jump}/bin/jump shell zsh)"
       '';
     };
   };
