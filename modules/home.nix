@@ -102,8 +102,6 @@ in
         gp = "git log --stat --max-count=1 --format=medium";
         gs = "git status";
         l = "ls -alh";
-        nixrebuild = "darwin-rebuild switch --flake ~/nixos-config/.#";
-        nixupdate = "pushd ~/nixos-config; nix flake update; nixrebuild; popd";
       };
       history = {
         ignorePatterns = [ "exit" "rm *" ];
