@@ -43,7 +43,6 @@ in
     git = {
       enable = true;
       aliases = {
-        checkotu = "checkout";
         recent = "for-each-ref --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads";
         wip = "commit -m 'wip [skip ci]'";
       };
@@ -54,20 +53,36 @@ in
       userName = "Antti Kupila";
       extraConfig = {
         color.ui = "auto";
-        commit.gpgsign = true;
-        init.defaultBranch = "main";
-        pull.rebase = true;
-        rebase.autosquash = true;
-        rebase.autostash = true;
+        commit = {
+          gpgsign = true;
+          verbose = true;
+        };
+        diff = {
+          algorithm = "patience";
+        };
         format.pretty = "minimal";
+        help.autocorrect = 1;
+        init.defaultBranch = "main";
         merge = {
           tool = "opendiff";
-        };
-        mergetool = {
-          keepBackup = false;
+          conflictstyle = "zdiff3";
+          keepbackup = false;
         };
         pretty = {
           minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
+        };
+        pull = {
+          rebase = true;
+        };
+        push = {
+          default = "current";
+        };
+        rebase = {
+          autosquash = true;
+          autostash = true;
+        };
+        rerere = {
+          enabled = true;
         };
         url."git@github.com:".insteadOf = "https://github.com";
       };
