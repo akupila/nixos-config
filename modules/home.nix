@@ -11,7 +11,7 @@ in
     # Binaries installed for current user.
     packages = with pkgs; [
       gnupg
-      go
+      go_1_22
       jq
       jump
       neovim
