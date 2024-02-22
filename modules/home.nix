@@ -26,9 +26,17 @@ in
   xdg.configFile = {
     nvim = dotfiles "nvim";
     wezterm = dotfiles "wezterm";
+    atuin = dotfiles "atuin";
   };
 
   programs = {
+    atuin = {
+      enable = true;
+      flags = [
+        "--disable-up-arrow"
+      ];
+    };
+
     direnv = {
       enable = true;
       enableZshIntegration = true;
@@ -37,7 +45,6 @@ in
 
     fzf = {
       enable = true;
-      enableZshIntegration = true;
     };
 
     git = {
