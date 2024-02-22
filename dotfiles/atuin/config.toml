@@ -36,7 +36,7 @@ update_check = false
 ## set it to 0 to sync after every command
 # sync_frequency = "10m"
 
-## which search mode to use
+## which nsearch mode to use
 ## possible values: prefix, fulltext, fuzzy, skim
 # search_mode = "fuzzy"
 
@@ -132,8 +132,7 @@ show_help = false
 
 ## Defaults to true. If enabled, upon hitting enter Atuin will immediately execute the command. Press tab to return to the shell and edit.
 # This applies for new installs. Old installs will keep the old behaviour unless configured otherwise.
-enter_accept = true
-
+enter_accept = false
 
 ## Defaults to "emacs".  This specifies the keymap on the startup of `atuin
 ## search`.  If this is set to "auto", the startup keymap mode in the Atuin
