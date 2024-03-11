@@ -51,6 +51,7 @@ in
       enable = true;
       aliases = {
         recent = "for-each-ref --sort=-committerdate --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads";
+        fixup = "!f() { git commit --fixup $1; GIT_SEQUENCE_EDITOR=true git rebase -i --autostash --autosquash $1^; }; f";
         wip = "commit -m 'wip [skip ci]'";
       };
       ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ];
