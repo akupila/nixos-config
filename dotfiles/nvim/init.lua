@@ -28,6 +28,10 @@ vim.keymap.set('n', '<C-q>', ':bprevious | bwipeout #<cr>')
 -- Show diagnostics
 vim.keymap.set('n', '<C-k>', '<cmd>lua vim.diagnostic.open_float()<cr>')
 
+-- Move line up/down with Alt-j/k
+vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
+vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
+
 -- Options --
 vim.o.backup = false
 vim.o.backupcopy = 'yes'
