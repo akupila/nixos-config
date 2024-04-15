@@ -95,6 +95,14 @@ config.keys = {
       end),
     },
   },
+
+  {
+    key = 'w',
+    mods = 'CMD',
+    action = wezterm.action.CloseCurrentPane {
+      confirm = true,
+    },
+  },
 };
 
 for i = 1, 9 do
