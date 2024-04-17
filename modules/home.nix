@@ -57,13 +57,12 @@ in
       };
       ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ];
       signing.key = null;
-      signing.signByDefault = true;
       userEmail = "akupila@gmail.com";
       userName = "Antti Kupila";
       extraConfig = {
         color.ui = "auto";
         commit = {
-          gpgsign = true;
+          gpgSign = true;
           verbose = true;
         };
         diff = {
