@@ -10,7 +10,6 @@ in
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
-      difftastic
       gnupg
       go_1_22
       jq
@@ -66,7 +65,7 @@ in
           verbose = true;
         };
         diff = {
-          external = "difft";
+          algorithm = "patience";
         };
         format.pretty = "minimal";
         help.autocorrect = 1;
