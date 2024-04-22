@@ -70,6 +70,9 @@ in
         format.pretty = "minimal";
         help.autocorrect = 1;
         init.defaultBranch = "main";
+        fetch = {
+          prune = true;
+        };
         merge = {
           tool = "opendiff";
           conflictstyle = "zdiff3";
