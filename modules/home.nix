@@ -82,6 +82,10 @@ in
           conflictstyle = "zdiff3";
           keepbackup = false;
         };
+        maintenance = {
+          auto = false;
+          strategy = "incremental";
+        };
         pretty = {
           minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
         };
