@@ -98,6 +98,7 @@ in
         rebase = {
           autosquash = true;
           autostash = true;
+          updateRefs = true;
         };
         rerere = {
           enabled = true;
