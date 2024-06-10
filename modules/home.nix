@@ -10,6 +10,7 @@ in
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
+      cargo
       gnupg
       go_1_22
       jq
@@ -161,6 +162,7 @@ in
         bindkey "^V^V" edit-command-line
 
         export PATH=$PATH:~/go/bin
+        export PATH=$PATH:~/.cargo/bin
 
         # Jump shell
         eval "$(${pkgs.jump}/bin/jump shell zsh)"
