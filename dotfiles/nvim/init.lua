@@ -22,8 +22,11 @@ vim.keymap.set('v', '>', '>gv')
 -- Highlight search without moving
 vim.keymap.set('n', '*', ':let start_pos = winsaveview()<CR>*:call winrestview(start_pos)<cr>')
 
+-- Close buffer and return to previous buffer
+vim.keymap.set('n', '<C-q>', '<C-o> :silent bwipeout #<cr>')
+
 -- Close buffer without closing split
-vim.keymap.set('n', '<C-q>', ':bprevious | bwipeout #<cr>')
+vim.keymap.set('n', '<leader><C-q>', ':bprevious | bwipeout #<cr>')
 
 -- Show diagnostics
 vim.keymap.set('n', '<C-k>', '<cmd>lua vim.diagnostic.open_float()<cr>')
