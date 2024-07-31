@@ -5,8 +5,7 @@
   services.nix-daemon.enable = true;
 
   fonts = {
-    fontDir.enable = true; # Note: This will remove any manually installed fonts.
-    fonts = [
+    packages = [
       (pkgs.nerdfonts.override {
         fonts = [
           # Fonts to include. If we don't do this, we'll install all fonts.
