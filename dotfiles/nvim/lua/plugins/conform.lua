@@ -3,12 +3,13 @@ return {
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
   opts = {
+    stop_after_first = true,
     formatters_by_ft = {
-      sh = { { "shfmt" } },
-      javascript = { { "biome" } },
-      typescript = { { "biome" } },
-      typescriptreact = { { "biome" } },
-      sql = { { "pg_format" } },
+      sh = { "shfmt" },
+      javascript = { "biome" },
+      typescript = { "biome" },
+      typescriptreact = { "biome" },
+      sql = { "pg_format" },
     },
     format_on_save = {
       timeout_ms = 2500,
