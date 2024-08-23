@@ -35,6 +35,9 @@ vim.keymap.set('n', '<C-k>', '<cmd>lua vim.diagnostic.open_float()<cr>')
 vim.keymap.set('n', '<A-j>', ':m .+1<CR>==')
 vim.keymap.set('n', '<A-k>', ':m .-2<CR>==')
 
+vim.keymap.set('n', '<', ':bprevious<CR>')
+vim.keymap.set('n', '>', ':bnext<CR>')
+
 -- Options --
 vim.o.backup = false
 vim.o.backupcopy = 'yes'
