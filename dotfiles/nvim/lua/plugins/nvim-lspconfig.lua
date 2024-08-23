@@ -13,7 +13,6 @@ return {
     lspconfig.gopls.setup {
       settings = {
         gopls = {
-          ['local'] = "github.com/GetStream/chat",
           staticcheck = true,
           gofumpt = true,
           analyses = {
