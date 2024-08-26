@@ -166,6 +166,11 @@ in
 
         # Jump shell
         eval "$(${pkgs.jump}/bin/jump shell zsh)"
+
+        LOCAL_CONFIG="$HOME/.config/local.zsh"
+        if [ -f "$LOCAL_CONFIG" ]; then
+          source "$LOCAL_CONFIG"
+        fi
       '';
     };
   };

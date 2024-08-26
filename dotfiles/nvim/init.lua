@@ -62,6 +62,7 @@ vim.o.updatetime = 250
 vim.o.magic = false
 vim.o.splitbelow = true
 vim.o.splitright = true
+vim.o.splitkeep = "screen"
 
 vim.opt.listchars = {
   tab = '⎸ ',
