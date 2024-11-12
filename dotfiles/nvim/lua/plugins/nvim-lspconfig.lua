@@ -23,7 +23,7 @@ return {
           },
           experimentalPostfixCompletions = false,
           hoverKind = "FullDocumentation",
-          linksInHover = false,
+          linksInHover = "gopls",
         },
       },
     }
@@ -52,6 +52,8 @@ return {
       root_dir = lspconfig.util.root_pattern("package.json"),
       single_file_support = false
     }
+
+    lspconfig.svelte.setup {}
 
     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
     vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
