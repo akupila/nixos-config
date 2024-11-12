@@ -48,12 +48,9 @@ return {
       },
     }
 
-    lspconfig.tsserver.setup {
-      on_attach = function(client)
-        -- Use efm instead
-        client.server_capabilities.documentFormattingProvider = false
-        client.server_capabilities.documentRangeFormattingProvider = false
-      end
+    lspconfig.ts_ls.setup {
+      root_dir = lspconfig.util.root_pattern("package.json"),
+      single_file_support = false
     }
 
     vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
