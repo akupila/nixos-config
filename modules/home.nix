@@ -12,7 +12,7 @@ in
     packages = with pkgs; [
       cargo
       gnupg
-      go_1_22
+      go
       jq
       jump
       neovim

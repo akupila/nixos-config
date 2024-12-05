@@ -4,19 +4,11 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
 
-  fonts = {
-    packages = [
-      (pkgs.nerdfonts.override {
-        fonts = [
-          # Fonts to include. If we don't do this, we'll install all fonts.
-          # https://github.com/NixOS/nixpkgs/blob/master/pkgs/data/fonts/nerdfonts/shas.nix
-          "JetBrainsMono" # Default for WezTerm
-          "SourceCodePro"
-          "Hack"
-        ];
-      })
-    ];
-  };
+  fonts.packages = [
+    pkgs.nerd-fonts.sauce-code-pro
+    pkgs.nerd-fonts.hack
+    pkgs.nerd-fonts.jetbrains-mono # Default for WezTerm
+  ];
 
   environment = {
     systemPath = [ "/opt/homebrew/bin" ];

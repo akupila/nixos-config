@@ -13,3 +13,7 @@ update:
 .PHONY: check
 check:
 	@nix flake check --all-systems && echo "OK"
+
+.PHONY: gc
+gc:
+	nix-collect-garbage --delete-older-than 7d
