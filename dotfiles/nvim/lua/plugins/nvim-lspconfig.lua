@@ -16,7 +16,6 @@ return {
           staticcheck = true,
           gofumpt = true,
           analyses = {
-            fieldalignment = true,
             nilness = true,
             unusedwrite = true,
             shadow = false,
