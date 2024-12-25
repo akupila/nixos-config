@@ -32,19 +32,5 @@
         ];
       };
 
-      # Work laptop
-      darwinConfigurations.antti-stream = darwin.lib.darwinSystem {
-        system = "aarch64-darwin";
-        specialArgs = {
-          inherit inputs user;
-        };
-        modules = [
-          home-manager.darwinModules.home-manager
-          ./modules/default.nix
-          ./modules/darwin.nix
-          ./modules/work.nix
-        ];
-      };
-
     };
 }
