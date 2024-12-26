@@ -1,7 +1,19 @@
 { user, ... }:
 
 {
-  nix.settings.experimental-features = "nix-command flakes";
+  nix.settings = {
+    trusted-users = [
+      "root"
+      user
+    ];
+    experimental-features = "nix-command flakes";
+    substituters = [
+      "https://akupila-nixos-config.cachix.org"
+    ];
+    trusted-public-keys = [
+      "akupila-nixos-config.cachix.org-1:pjuJHO7gzNWy1dlXlr86qWi0oK+zSVy/dTYxh8V4VxM="
+    ];
+  };
   nixpkgs.config.allowUnfree = true;
 
   environment = {
