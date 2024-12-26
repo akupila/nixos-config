@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 let
   dotfiles = path: {
@@ -18,6 +18,8 @@ in
       neovim
       nodejs
       ripgrep
+      tree
+      watch
       yubikey-manager
     ];
 

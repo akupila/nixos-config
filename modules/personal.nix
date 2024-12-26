@@ -1,9 +1,7 @@
 { ... }:
 
 {
-  environment = {
-    variables = {
-      GOPRIVATE = "github.com/akupila";
-    };
+  environment.variables = {
+    GOPRIVATE = "github.com/akupila";
   };
 }
