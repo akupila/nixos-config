@@ -31,6 +31,7 @@ in
     nvim = dotfiles "nvim";
     wezterm = dotfiles "wezterm";
     atuin = dotfiles "atuin";
+    ghostty = dotfiles "ghostty";
   };
 
   programs = {

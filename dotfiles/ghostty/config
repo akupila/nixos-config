@@ -1,0 +1,13 @@
+font-family = Hack Nerd Font Mono
+font-size = 13
+font-thicken = true
+
+adjust-underline-position = 10%
+
+cursor-style = block
+cursor-style-blink = false
+
+theme = ayu
+
+shell-integration = zsh
+shell-integration-features = no-cursor
