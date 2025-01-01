@@ -12,6 +12,11 @@ theme = ayu
 shell-integration = zsh
 shell-integration-features = no-cursor
 
+macos-titlebar-style = tabs
+mouse-hide-while-typing = true
+
+unfocused-split-opacity = 0.6
+
 keybind = cmd+h=goto_split:left
 keybind = cmd+j=goto_split:bottom
 keybind = cmd+k=goto_split:top
