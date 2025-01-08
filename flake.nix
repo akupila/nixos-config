@@ -32,5 +32,19 @@
         ];
       };
 
+      # Work laptop
+      darwinConfigurations.akupila-M-CQ3LG7V9X3 = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {
+          inherit inputs user;
+        };
+        modules = [
+          home-manager.darwinModules.home-manager
+          ./modules/default.nix
+          ./modules/darwin.nix
+          ./modules/work.nix
+        ];
+      };
+
     };
 }
