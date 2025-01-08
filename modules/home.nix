@@ -17,6 +17,7 @@ in
       jq
       jump
       neovim
+      nil
       nodejs
       ripgrep
       tree
