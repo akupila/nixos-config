@@ -30,14 +30,14 @@ return {
     },
 
     completion = {
-      accept = { auto_brackets = { enabled = false } },
-      menu = { auto_show = function(ctx) return ctx.mode ~= 'cmdline' end }
+      accept = { auto_brackets = { enabled = false } }
     },
 
     -- Default list of enabled providers defined so that you can extend it
     -- elsewhere in your config, without redefining it, due to `opts_extend`
     sources = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
+      cmdline = {}
     },
 
     signature = { enabled = true }
