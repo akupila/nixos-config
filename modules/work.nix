@@ -12,6 +12,14 @@
           kubectl
         ];
       };
+
+      programs = {
+        zsh = {
+          shellAliases = {
+            k = "kubectl";
+          };
+        };
+      };
     };
   };
 }
