@@ -10,7 +10,6 @@ in
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
-      awscli2
       cachix
       cargo
       gnupg
