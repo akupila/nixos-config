@@ -9,7 +9,9 @@
     users.${user} = {
       home = {
         packages = with pkgs; [
+          awscli2
           kubectl
+          terraform
         ];
       };
 
