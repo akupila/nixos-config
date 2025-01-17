@@ -14,6 +14,7 @@ in
       cargo
       gnupg
       go
+      graphviz
       jq
       jump
       neovim
