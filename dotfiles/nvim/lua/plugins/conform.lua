@@ -10,10 +10,12 @@ return {
       typescript = { "biome" },
       typescriptreact = { "biome" },
       sql = { "pg_format" },
+      c = { "clang-format" },
+      cpp = { "clang-format" },
     },
     format_on_save = {
       timeout_ms = 2500,
-      lsp_fallback = true,
+      lsp_fallback = "fallback",
     },
     formatters = {
       shfmt = {
