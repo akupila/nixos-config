@@ -1,4 +1,4 @@
-{ user, pkgs, ... }:
+{ user, pkgs, lib, ... }:
 
 {
   environment.variables = {
@@ -16,6 +16,9 @@
       };
 
       programs = {
+        git = {
+          userEmail = lib.mkForce "antti.kupila@iceye.com";
+        };
         zsh = {
           shellAliases = {
             k = "kubectl";
