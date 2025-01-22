@@ -12,6 +12,7 @@ in
     packages = with pkgs; [
       cachix
       cargo
+      coreutils
       gnupg
       go
       graphviz
