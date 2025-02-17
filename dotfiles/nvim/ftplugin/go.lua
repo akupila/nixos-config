@@ -1,6 +1,11 @@
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = "*.go",
   callback = function()
+    local buf = vim.api.nvim_get_current_buf()
+    if vim.g.disable_autoformat or vim.b[buf].disable_autoformat then
+      return
+    end
+
     local params = vim.lsp.util.make_range_params()
     params.context = { only = { "source.organizeImports" } }
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 1000)
