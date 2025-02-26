@@ -67,6 +67,9 @@ in
       userEmail = "akupila@gmail.com";
       userName = "Antti Kupila";
       extraConfig = {
+        branch = {
+          sort = "-committerdate";
+        };
         color.ui = "auto";
         commit = {
           gpgSign = true;
