@@ -78,10 +78,13 @@ in
           verbose = true;
         };
         diff = {
-          algorithm = "patience";
+          algorithm = "histogram";
+          colorMoved = "plain";
+          renames = true;
         };
         fetch = {
           prune = true;
+          pruneTags = true;
         };
         format = {
           pretty = "minimal";
@@ -119,6 +122,10 @@ in
         };
         rerere = {
           enabled = true;
+          autoupdate = true;
+        };
+        tag = {
+          sort = "version:refname";
         };
         url = {
           "git@github.com:".insteadOf = "https://github.com";
