@@ -70,32 +70,39 @@ in
         branch = {
           sort = "-committerdate";
         };
-        color.ui = "auto";
+        color = {
+          ui = "auto";
+        };
         commit = {
           gpgSign = true;
           verbose = true;
         };
-        gpg.format = "ssh";
-        user = {
-          signingkey = "~/.ssh/id_ed25519.pub";
-        };
         diff = {
           algorithm = "patience";
         };
-        format.pretty = "minimal";
-        help.autocorrect = 1;
-        init.defaultBranch = "main";
         fetch = {
           prune = true;
+        };
+        format = {
+          pretty = "minimal";
+        };
+        gpg = {
+          format = "ssh";
+        };
+        help = {
+          autocorrect = 1;
+        };
+        init = {
+          defaultBranch = "main";
+        };
+        maintenance = {
+          auto = false;
+          strategy = "incremental";
         };
         merge = {
           tool = "opendiff";
           conflictstyle = "zdiff3";
           keepbackup = false;
-        };
-        maintenance = {
-          auto = false;
-          strategy = "incremental";
         };
         pretty = {
           minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
@@ -113,7 +120,12 @@ in
         rerere = {
           enabled = true;
         };
-        url."git@github.com:".insteadOf = "https://github.com";
+        url = {
+          "git@github.com:".insteadOf = "https://github.com";
+        };
+        user = {
+          signingkey = "~/.ssh/id_ed25519.pub";
+        };
       };
     };
 
