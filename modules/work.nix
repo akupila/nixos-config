@@ -10,8 +10,10 @@
       home = {
         packages = with pkgs; [
           awscli2
+          delta
           kubectl
           terraform
+          vault
         ];
       };
 
