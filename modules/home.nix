@@ -108,7 +108,7 @@ in
           keepbackup = false;
         };
         pretty = {
-          minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cr)%C(reset)";
+          minimal = "%C(auto)%h %d %C(bold)%s%C(reset) %C(dim)(%cn %cr)%C(reset)";
         };
         pull = {
           rebase = true;
