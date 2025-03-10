@@ -11,6 +11,7 @@
         packages = with pkgs; [
           awscli2
           delta
+          fluxcd
           kubectl
           terraform
           vault
