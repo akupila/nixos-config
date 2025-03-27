@@ -13,6 +13,7 @@
           delta
           fluxcd
           kubectl
+          sops
           terraform
           vault
         ];
