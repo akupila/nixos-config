@@ -40,7 +40,7 @@ return {
     },
 
     cmdline = {
-      sources = {},
+      enabled = false
     },
 
     signature = { enabled = true }
