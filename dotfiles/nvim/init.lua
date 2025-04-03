@@ -50,19 +50,20 @@ vim.o.ignorecase = true
 vim.o.laststatus = 3
 vim.o.lazyredraw = true
 vim.o.list = true
+vim.o.magic = false
 vim.o.number = true
 vim.o.relativenumber = true
 vim.o.shortmess = 'aIc'
 vim.o.signcolumn = 'yes'
 vim.o.smartcase = true
+vim.o.splitbelow = true
+vim.o.splitkeep = "screen"
+vim.o.splitright = true
 vim.o.swapfile = false
 vim.o.termguicolors = true
 vim.o.undofile = true
 vim.o.updatetime = 250
-vim.o.magic = false
-vim.o.splitbelow = true
-vim.o.splitright = true
-vim.o.splitkeep = "screen"
+vim.o.winborder = 'rounded'
 
 vim.opt.listchars = {
   tab = '⎸ ',
@@ -78,6 +79,16 @@ vim.wo.spell = true
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = 'nvim_treesitter#foldexpr()'
 
+-- LSP --
+vim.lsp.enable({ 'gopls', 'clangd', 'lua_ls', 'nil_ls' })
+
+vim.api.nvim_create_autocmd('LspAttach', {
+  callback = function(args)
+    vim.bo[args.buf].formatprg = nil
+    vim.bo[args.buf].omnifunc = nil
+  end,
+})
+
 -- Diagnostics --
 vim.diagnostic.config({
   underline = true,
@@ -91,6 +102,10 @@ vim.diagnostic.config({
   update_in_insert = true,
   severity_sort = true,
 })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Allow saving with uppercase W so that shift-; for : doesn't accidentally also capitalize w
 vim.api.nvim_create_user_command('W', 'w', {})
