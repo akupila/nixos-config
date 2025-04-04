@@ -84,8 +84,13 @@ vim.lsp.enable({ 'gopls', 'clangd', 'lua_ls', 'nil_ls' })
 
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
-    vim.bo[args.buf].formatprg = nil
-    vim.bo[args.buf].omnifunc = nil
+    local buf = args.buf
+    local opts = { buffer = buf }
+
+    vim.bo[buf].formatprg = nil
+    vim.bo[buf].omnifunc = nil
+
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
   end,
 })
 
