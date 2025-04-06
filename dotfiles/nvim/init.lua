@@ -85,12 +85,16 @@ vim.lsp.enable({ 'gopls', 'clangd', 'lua_ls', 'nil_ls' })
 vim.api.nvim_create_autocmd('LspAttach', {
   callback = function(args)
     local buf = args.buf
-    local opts = { buffer = buf }
 
     vim.bo[buf].formatprg = nil
     vim.bo[buf].omnifunc = nil
 
-    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = buf, desc = 'LSP Go to definition' })
+    vim.keymap.set('n', 'gla', vim.lsp.buf.code_action, { buffer = buf, desc = 'LSP Code action' })
+    vim.keymap.set('n', 'glr', vim.lsp.buf.references, { buffer = buf, desc = 'LSP References' })
+    vim.keymap.set('n', 'gli', vim.lsp.buf.implementation, { buffer = buf, desc = 'LSP Implementation' })
+    vim.keymap.set('n', 'gln', vim.lsp.buf.rename, { buffer = buf, desc = 'LSP Rename' })
+    vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.lsp.buf.signature_help, { buffer = buf, desc = 'LSP Signature help' })
   end,
 })
 
