@@ -13,6 +13,7 @@ in
       cachix
       cargo
       coreutils
+      fd
       gnupg
       go
       graphviz
