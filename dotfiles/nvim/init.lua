@@ -91,10 +91,14 @@ vim.api.nvim_create_autocmd('LspAttach', {
 
     vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { buffer = buf, desc = 'LSP Go to definition' })
     vim.keymap.set('n', 'gla', vim.lsp.buf.code_action, { buffer = buf, desc = 'LSP Code action' })
-    vim.keymap.set('n', 'glr', vim.lsp.buf.references, { buffer = buf, desc = 'LSP References' })
-    vim.keymap.set('n', 'gli', vim.lsp.buf.implementation, { buffer = buf, desc = 'LSP Implementation' })
     vim.keymap.set('n', 'gln', vim.lsp.buf.rename, { buffer = buf, desc = 'LSP Rename' })
     vim.keymap.set({ 'n', 'i' }, '<C-s>', vim.lsp.buf.signature_help, { buffer = buf, desc = 'LSP Signature help' })
+
+    local ok, fzf = pcall(require, 'fzf-lua')
+    if ok then
+      vim.keymap.set('n', 'glr', fzf.lsp_references, { buffer = buf, desc = 'LSP References' })
+      vim.keymap.set('n', 'gli', fzf.lsp_implementations, { buffer = buf, desc = 'LSP Implementation' })
+    end
   end,
 })
 
