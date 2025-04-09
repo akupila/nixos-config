@@ -18,10 +18,10 @@ return {
       },
     })
 
-    vim.api.nvim_set_keymap("n", "<C-\\>", [[<Cmd>lua require"fzf-lua".buffers()<CR>]], { desc = "Fuzzy find buffers" })
-    vim.api.nvim_set_keymap("n", "<C-k>", [[<Cmd>lua require"fzf-lua".builtin()<CR>]], { desc = "Fuzzy find builtin" })
-    vim.api.nvim_set_keymap("n", "<C-p>", [[<Cmd>lua require"fzf-lua".files()<CR>]], { desc = "Fuzzy find files" })
-    vim.api.nvim_set_keymap("n", "<C-l>", [[<Cmd>lua require"fzf-lua".live_grep_glob()<CR>]], { desc = "Fuzzy find live grep" })
-    vim.api.nvim_set_keymap("n", "<C-g>", [[<Cmd>lua require"fzf-lua".grep_project()<CR>]], { desc = "Fuzzy find grep project" })
+    vim.keymap.set("n", "<C-\\>", fzf.buffers, { desc = "Fuzzy find buffers" })
+    vim.keymap.set("n", "<C-k>", fzf.builtin, { desc = "Fuzzy find builtin" })
+    vim.keymap.set("n", "<C-p>", fzf.files, { desc = "Fuzzy find files" })
+    vim.keymap.set("n", "<C-l>", fzf.live_grep_glob, { desc = "Fuzzy find live grep" })
+    vim.keymap.set("n", "<C-g>", fzf.grep_project, { desc = "Fuzzy find grep project" })
   end
 }
