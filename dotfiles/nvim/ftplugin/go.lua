@@ -6,7 +6,9 @@ vim.api.nvim_create_autocmd("BufWritePre", {
       return
     end
 
-    local params = vim.lsp.util.make_range_params()
+    local win = vim.api.nvim_get_current_win()
+    local client = vim.lsp.get_clients({ bufnr = buf })[1]
+    local params = vim.lsp.util.make_range_params(win, client.offset_encoding)
     params.context = { only = { "source.organizeImports" } }
     local result = vim.lsp.buf_request_sync(0, "textDocument/codeAction", params, 1000)
     for _, res in pairs(result or {}) do
