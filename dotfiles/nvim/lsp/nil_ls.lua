@@ -1,10 +1,10 @@
 return {
-  cmd = { "nil-ls" },
-  settings = {
-    ['nil'] = {
-      formatting = {
-        command = { "nixpkgs-fmt" },
-      },
-    },
-  },
+	cmd = { "nil-ls" },
+	settings = {
+		["nil"] = {
+			formatting = {
+				command = { "nixpkgs-fmt" },
+			},
+		},
+	},
 }
