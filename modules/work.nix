@@ -13,6 +13,7 @@
           delta
           fluxcd
           kubectl
+          kubernetes-helm
           sops
           terraform
           vault
