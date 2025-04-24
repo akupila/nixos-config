@@ -12,6 +12,7 @@
           awscli2
           delta
           fluxcd
+          k9s
           kubectl
           kubernetes-helm
           sops
