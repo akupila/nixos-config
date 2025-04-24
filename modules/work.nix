@@ -11,6 +11,7 @@
         packages = with pkgs; [
           awscli2
           delta
+          envsubst
           fluxcd
           k9s
           kubectl
