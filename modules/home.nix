@@ -25,6 +25,7 @@ in
       ripgrep
       tree
       watch
+      yamlfmt
       yubikey-manager
     ];
 
