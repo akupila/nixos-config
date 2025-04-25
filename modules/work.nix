@@ -15,6 +15,7 @@
           fluxcd
           k9s
           kubectl
+          kubectx
           kubernetes-helm
           sops
           terraform
