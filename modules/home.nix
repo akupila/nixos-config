@@ -68,6 +68,10 @@ in
       signing.key = null;
       userEmail = "akupila@gmail.com";
       userName = "Antti Kupila";
+      attributes = [
+        "go.sum merge=union"
+        "go.work.sum merge=union"
+      ];
       extraConfig = {
         branch = {
           sort = "-committerdate";
