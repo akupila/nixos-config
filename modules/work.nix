@@ -20,6 +20,7 @@
           sops
           terraform
           vault
+          packer
         ];
       };
 
