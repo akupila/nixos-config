@@ -11,6 +11,8 @@
     systemPath = [ "/opt/homebrew/bin" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   users.users.${user}.home = "/Users/${user}";
 
   # Enable touch id for sudo.
