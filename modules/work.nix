@@ -13,14 +13,15 @@
           delta
           envsubst
           fluxcd
+          gnutls
           k9s
           kubectl
           kubectx
           kubernetes-helm
+          packer
           sops
           terraform
           vault
-          packer
         ];
       };
 
