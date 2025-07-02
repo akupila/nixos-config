@@ -80,7 +80,7 @@ vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
 
 -- LSP --
-vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls" })
+vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)

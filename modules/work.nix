@@ -21,6 +21,7 @@
           packer
           sops
           terraform
+          terraform-ls
           vault
         ];
       };
