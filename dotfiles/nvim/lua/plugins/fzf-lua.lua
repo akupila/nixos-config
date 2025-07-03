@@ -14,7 +14,7 @@ return {
 				},
 			},
 			grep = {
-				winopts = { preview = { hidden = true } },
+				winopts = { preview = { layout = "vertical" } },
 			},
 		})
 
