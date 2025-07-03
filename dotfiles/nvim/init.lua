@@ -31,9 +31,9 @@ vim.keymap.set("n", "<leader><C-q>", ":bprevious | bwipeout #<cr>")
 -- Show diagnostics
 vim.keymap.set("n", "<C-k>", "<cmd>lua vim.diagnostic.open_float()<cr>")
 
--- Move line up/down with Alt-j/k
-vim.keymap.set("n", "<A-j>", ":m .+1<CR>==")
-vim.keymap.set("n", "<A-k>", ":m .-2<CR>==")
+-- Move line up/down with ctrl-shift-j/k
+vim.keymap.set("n", "<C-S-j>", ":m .+1<CR>==")
+vim.keymap.set("n", "<C-S-k>", ":m .-2<CR>==")
 
 vim.keymap.set("n", "<left>", ":bprevious<CR>")
 vim.keymap.set("n", "<right>", ":bnext<CR>")
