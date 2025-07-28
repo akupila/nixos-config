@@ -10,7 +10,7 @@ in
   home = {
     # Binaries installed for current user.
     packages = with pkgs; [
-      _1password
+      _1password-cli
       cachix
       cargo
       coreutils
