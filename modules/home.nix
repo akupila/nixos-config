@@ -23,6 +23,7 @@ in
       neovim
       nil
       nodejs
+      pv
       ripgrep
       tree
       watch
