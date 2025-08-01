@@ -16,6 +16,7 @@ macos-titlebar-style = tabs
 mouse-hide-while-typing = true
 
 unfocused-split-opacity = 0.6
+split-divider-color = #353840
 
 keybind = cmd+h=goto_split:left
 keybind = cmd+j=goto_split:bottom
