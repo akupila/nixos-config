@@ -20,6 +20,7 @@ in
       graphviz
       jq
       jump
+      ncdu
       neovim
       nil
       nodejs
