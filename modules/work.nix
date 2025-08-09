@@ -19,6 +19,7 @@
           kubectx
           kubernetes-helm
           packer
+          s5cmd
           sops
           terraform
           terraform-ls
