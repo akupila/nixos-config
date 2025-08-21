@@ -147,7 +147,6 @@ in
 
     zsh = {
       enable = true;
-      dotDir = ".config/zsh";
       enableCompletion = true;
       plugins = with pkgs; [
         {
@@ -180,7 +179,7 @@ in
         ignorePatterns = [ "exit" "rm *" ];
         ignoreSpace = true;
       };
-      initExtra = ''
+      initContent = ''
         autoload -z edit-command-line
         zle -N edit-command-line
 
