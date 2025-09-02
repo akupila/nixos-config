@@ -20,6 +20,7 @@ in
       graphviz
       jq
       jump
+      lua-language-server
       ncdu
       neovim
       nil
