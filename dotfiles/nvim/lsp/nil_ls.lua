@@ -1,5 +1,5 @@
 return {
-	cmd = { "nil-ls" },
+	cmd = { "nil" },
 	filetypes = { "nix" },
 	settings = {
 		["nil"] = {
