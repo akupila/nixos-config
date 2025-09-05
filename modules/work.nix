@@ -14,6 +14,7 @@
           envsubst
           fluxcd
           gnutls
+          granted
           k9s
           kubectl
           kubectx
