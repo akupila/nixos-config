@@ -198,6 +198,7 @@ in
 
         bindkey "^V^V" edit-command-line
 
+        export PATH=$PATH:~/.local/bin
         export PATH=$PATH:~/go/bin
         export PATH=$PATH:~/.cargo/bin
 
