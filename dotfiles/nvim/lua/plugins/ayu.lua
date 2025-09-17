@@ -5,7 +5,7 @@ return {
 
 		ayu.setup({
 			overrides = {
-				LineNr = { fg = "#2e3644" }, -- Slightly more visible
+				LineNr = { fg = "#404855" }, -- Slightly more visible
 			},
 		})
 
