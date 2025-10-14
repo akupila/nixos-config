@@ -102,6 +102,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
 	end,
 })
 
+-- Prevent log growing infinitely. Set "debug" when needed.
+vim.lsp.set_log_level("off")
+
 -- Diagnostics --
 vim.diagnostic.config({
 	underline = true,
