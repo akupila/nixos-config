@@ -19,6 +19,7 @@ in
       go
       graphviz
       jq
+      jujutsu
       jump
       lua-language-server
       ncdu
