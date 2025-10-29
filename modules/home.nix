@@ -42,6 +42,7 @@ in
     wezterm = dotfiles "wezterm";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
+    jj = dotfiles "jj";
   };
 
   programs = {
