@@ -19,7 +19,6 @@ in
       go
       graphviz
       jq
-      jujutsu
       jump
       lua-language-server
       ncdu
@@ -42,7 +41,6 @@ in
     wezterm = dotfiles "wezterm";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
-    jj = dotfiles "jj";
   };
 
   programs = {
@@ -144,6 +142,25 @@ in
         };
         user = {
           signingkey = "~/.ssh/id_ed25519.pub";
+        };
+      };
+    };
+
+    jujutsu = {
+      enable = true;
+      settings = {
+        ui = {
+          pager = ":builtin";
+          default-command = "log";
+        };
+        user = {
+          name = "Antti Kupila";
+          email = "akupila@gmail.com";
+        };
+        signing = {
+          behavior = "force";
+          backend = "ssh";
+          key = "~/.ssh/id_ed25519.pub";
         };
       };
     };

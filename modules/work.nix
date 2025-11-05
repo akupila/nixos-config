@@ -32,6 +32,11 @@
         git = {
           userEmail = lib.mkForce "antti.kupila@iceye.com";
         };
+        jujutsu = {
+          settings = {
+            user.email = lib.mkForce "antti.kupila@iceye.com";
+          };
+        };
         zsh = {
           shellAliases = {
             k = "kubectl";
