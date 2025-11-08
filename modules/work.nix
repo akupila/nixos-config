@@ -30,7 +30,9 @@
 
       programs = {
         git = {
-          userEmail = lib.mkForce "antti.kupila@iceye.com";
+          settings = {
+            user.email = lib.mkForce "antti.kupila@iceye.com";
+          };
         };
         jujutsu = {
           settings = {

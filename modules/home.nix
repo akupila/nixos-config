@@ -63,20 +63,22 @@ in
 
     git = {
       enable = true;
-      aliases = {
-        recent = "for-each-ref --sort=-committerdate --count=20 --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads";
-        fixup = "!f() { git commit --fixup $1; GIT_SEQUENCE_EDITOR=true git rebase -i --autostash --autosquash $1^; }; f";
-        wip = "commit -m 'wip [skip ci]'";
-      };
       ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ];
       signing.key = null;
-      userEmail = "akupila@gmail.com";
-      userName = "Antti Kupila";
       attributes = [
         "go.sum merge=union"
         "go.work.sum merge=union"
       ];
-      extraConfig = {
+      settings = {
+        alias = {
+          recent = "for-each-ref --sort=-committerdate --count=20 --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) (%(color:green)%(committerdate:relative)%(color:reset))' refs/heads";
+          fixup = "!f() { git commit --fixup $1; GIT_SEQUENCE_EDITOR=true git rebase -i --autostash --autosquash $1^; }; f";
+          wip = "commit -m 'wip [skip ci]'";
+        };
+        user = {
+          email = "akupila@gmail.com";
+          name = "Antti Kupila";
+        };
         branch = {
           sort = "-committerdate";
         };
