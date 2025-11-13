@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 let
   dotfiles = path: {
@@ -168,20 +168,51 @@ in
       };
     };
 
+    starship = {
+      enable = true;
+      settings = {
+        add_newline = false;
+        follow_symlinks = false;
+        scan_timeout = 10;
+        format = lib.concatStrings [
+          "$username"
+          "$hostname"
+          "$directory"
+          "$character"
+        ];
+        right_format = lib.concatStrings [
+          "$cmd_duration"
+          "$jobs"
+          "$aws"
+        ];
+        directory = {
+          style = "blue";
+          truncate_to_repo = false;
+        };
+        character = {
+          success_symbol = "[›](green)";
+          error_symbol = "[›](red)";
+        };
+        cmd_duration = {
+          format = "[$duration]($style) ";
+          style = "yellow";
+        };
+        jobs = {
+          format = "[$number]($style) ";
+          number_threshold = 1;
+          style = "blue";
+        };
+        aws = {
+          format = "[$profile]($style)";
+          style = "cyan";
+        };
+      };
+    };
+
     zsh = {
       enable = true;
       enableCompletion = true;
-      plugins = with pkgs; [
-        {
-          name = "powerlevel10k";
-          src = zsh-powerlevel10k;
-          file = "share/zsh-powerlevel10k/powerlevel10k.zsh-theme";
-        }
-        {
-          name = "powerlevel10k-config";
-          src = ./../dotfiles/zsh;
-          file = "p10k.zsh";
-        }
+      plugins = [
         {
           name = "gocover";
           src = ./../dotfiles/zsh;
@@ -226,13 +257,14 @@ in
         export PATH=$PATH:~/.cargo/bin
         export TMPDIR=/tmp
 
-        # Jump shell
         eval "$(${pkgs.jump}/bin/jump shell zsh)"
 
         LOCAL_CONFIG="$HOME/.config/local.zsh"
         if [ -f "$LOCAL_CONFIG" ]; then
           source "$LOCAL_CONFIG"
         fi
+
+        eval "$(starship init zsh)"
       '';
     };
   };
