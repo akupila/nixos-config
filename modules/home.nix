@@ -42,6 +42,7 @@ in
     wezterm = dotfiles "wezterm";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
+    starship-jj = dotfiles "starship-jj";
   };
 
   programs = {
@@ -182,6 +183,7 @@ in
         ];
         right_format = lib.concatStrings [
           "$cmd_duration"
+          "\${custom.jj}"
           "$jobs"
           "$aws"
         ];
@@ -205,6 +207,18 @@ in
         aws = {
           format = "[$profile]($style)";
           style = "cyan";
+        };
+        custom.jj = {
+          command = "prompt";
+          format = "$output";
+          ignore_timeout = true;
+          shell = [
+            "starship-jj"
+            "--ignore-working-copy"
+            "starship"
+          ];
+          use_stdin = false;
+          when = true;
         };
       };
     };
