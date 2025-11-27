@@ -170,6 +170,7 @@ in
           "immutable_heads()" = "builtin_immutable_heads() | (trunk().. & ~mine())";
         };
         git = {
+          private-commits = "description(glob:'wip:*')";
           push-new-bookmarks = true;
         };
       };
