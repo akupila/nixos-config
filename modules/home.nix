@@ -166,6 +166,9 @@ in
           backend = "ssh";
           key = "~/.ssh/id_ed25519.pub";
         };
+        revset-aliases = {
+          "immutable_heads()" = "builtin_immutable_heads() | (trunk().. & ~mine())";
+        };
       };
     };
 
