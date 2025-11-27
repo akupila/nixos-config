@@ -173,6 +173,14 @@ in
           private-commits = "description(glob:'wip:*')";
           push-new-bookmarks = true;
         };
+        colors = {
+          "diff removed token" = {
+            underline = false;
+          };
+          "diff added token" = {
+            underline = false;
+          };
+        };
       };
     };
 
