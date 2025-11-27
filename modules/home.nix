@@ -169,6 +169,9 @@ in
         revset-aliases = {
           "immutable_heads()" = "builtin_immutable_heads() | (trunk().. & ~mine())";
         };
+        git = {
+          push-new-bookmarks = true;
+        };
       };
     };
 
