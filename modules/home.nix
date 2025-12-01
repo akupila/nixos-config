@@ -18,6 +18,7 @@ in
       gnupg
       go
       graphviz
+      htop
       jq
       jump
       lua-language-server
