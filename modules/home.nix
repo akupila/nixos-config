@@ -5,6 +5,24 @@ let
     source = ./../dotfiles/${path};
     recursive = true;
   };
+
+  oh-my-posh = pkgs.stdenv.mkDerivation rec {
+    pname = "oh-my-posh";
+    version = "28.3.0";
+
+    src = pkgs.fetchurl {
+      url = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v${version}/posh-darwin-arm64";
+      sha256 = "sha256-67mFYXWAHDdxK3YZKPnEnfBAKUtd9MDci6JLfttmEGU=";
+    };
+
+    dontUnpack = true;
+
+    installPhase = ''
+      mkdir -p $out/bin
+      cp $src $out/bin/oh-my-posh
+      chmod +x $out/bin/oh-my-posh
+    '';
+  };
 in
 {
   home = {
@@ -26,6 +44,7 @@ in
       neovim
       nil
       nodejs
+      oh-my-posh
       podman
       pv
       ripgrep
@@ -43,7 +62,7 @@ in
     wezterm = dotfiles "wezterm";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
-    starship-jj = dotfiles "starship-jj";
+    oh-my-posh = dotfiles "oh-my-posh";
   };
 
   programs = {
@@ -185,60 +204,6 @@ in
       };
     };
 
-    starship = {
-      enable = true;
-      settings = {
-        add_newline = false;
-        follow_symlinks = false;
-        scan_timeout = 10;
-        format = lib.concatStrings [
-          "$username"
-          "$hostname"
-          "$directory"
-          "$character"
-        ];
-        right_format = lib.concatStrings [
-          "$cmd_duration"
-          "\${custom.jj}"
-          "$jobs"
-          "$aws"
-        ];
-        directory = {
-          style = "blue";
-          truncate_to_repo = false;
-        };
-        character = {
-          success_symbol = "[›](green)";
-          error_symbol = "[›](red)";
-        };
-        cmd_duration = {
-          format = "[$duration]($style) ";
-          style = "yellow";
-        };
-        jobs = {
-          format = "[$number]($style) ";
-          number_threshold = 1;
-          style = "blue";
-        };
-        aws = {
-          format = "[$profile]($style)";
-          style = "cyan";
-        };
-        custom.jj = {
-          command = "prompt";
-          format = "$output";
-          ignore_timeout = true;
-          shell = [
-            "starship-jj"
-            "--ignore-working-copy"
-            "starship"
-          ];
-          use_stdin = false;
-          when = true;
-        };
-      };
-    };
-
     zsh = {
       enable = true;
       enableCompletion = true;
@@ -294,7 +259,7 @@ in
           source "$LOCAL_CONFIG"
         fi
 
-        eval "$(starship init zsh)"
+        eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.yaml)"
       '';
     };
   };

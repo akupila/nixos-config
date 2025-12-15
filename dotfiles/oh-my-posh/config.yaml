@@ -1,0 +1,77 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json
+version: 3
+final_space: true
+shell_integration: true
+enable_cursor_positioning: true
+async: true
+palette:
+  background: "#1F2430"
+  foreground: "#CBCCC6"
+  black: "#1F2430"
+  white: "#CBCCC6"
+  red: "#F28779"
+  green: "#BAE67E"
+  yellow: "#FFD580"
+  blue: "#5CCFE6"
+  magenta: "#D4BFFF"
+  cyan: "#95E6CB"
+  orange: "#FFAE57"
+  error: "#F26D78"
+  comment: "#5C6773"
+  accent: "#FFCC66"
+tooltips:
+  - type: aws
+    tips:
+      - aws
+    alignment: right
+    foreground: "p:orange"
+    template: " {{ .Profile }}"
+  - type: kubectl
+    tips:
+      - kubectl
+      - k
+    alignment: right
+    foreground: "p:blue"
+    template: "{{ .Context }}{{ if .Namespace }}/{{ .Namespace }}{{ end }}"
+blocks:
+  - type: prompt
+    alignment: left
+    segments:
+      - type: path
+        foreground: "p:blue"
+        template: "{{ .Path }}"
+        options:
+          style: agnoster_short
+          max_depth: 2
+      - type: git
+        foreground: "p:green"
+        template: " {{ .HEAD }}{{ if gt .Ahead 0 }} ⇡{{ end }}{{ if gt .Behind 0 }} ⇣{{ end }}{{ if or .Working.Changed .Staging.Changed }} ~{{ end }}"
+        options:
+          fetch_status: true
+          fetch_upstream_icon: false
+          branch_icon: ""
+          disable_with_jj: true
+      - type: jujutsu
+        foreground: "p:green"
+        template: " {{ .ClosestBookmarks }} {{ .ChangeID }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}"
+        options:
+          fetch_status: true
+          change_id_min_len: 2
+      - type: status
+        foreground: "p:green"
+        foreground_templates:
+          - "{{ if .Error }}p:red{{ end }}"
+        template: " ›"
+        options:
+          always_enabled: true
+  - type: rprompt
+    alignment: right
+    segments:
+      - type: executiontime
+        foreground: "p:comment"
+        template: "{{ .FormattedMs }}"
+        options:
+          threshold: 2000
+      - type: shell
+        foreground: "p:yellow"
+        template: "{{ if gt .Jobs 0 }} {{ .Jobs }}{{ end }}"
