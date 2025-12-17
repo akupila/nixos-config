@@ -103,7 +103,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 })
 
 -- Prevent log growing infinitely. Set "debug" when needed.
-vim.lsp.set_log_level("off")
+vim.lsp.log.set_level(vim.log.levels.OFF)
 
 -- Diagnostics --
 vim.diagnostic.config({
@@ -126,24 +126,19 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" }
 vim.api.nvim_create_user_command("W", "w", {})
 
 -- Plugins --
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	vim.fn.system({
-		"git",
-		"clone",
-		"--filter=blob:none",
-		"https://github.com/folke/lazy.nvim.git",
-		"--branch=stable", -- latest stable release
-		lazypath,
-	})
-end
-vim.opt.rtp:prepend(lazypath)
-
-require("lazy").setup("plugins", {
-	change_detection = {
-		notify = false,
-	},
-	checker = {
-		enable = true,
-	},
-})
+require("plugins.nvim-notify") -- Load first so vim.notify is available
+require("plugins.ayu")
+require("plugins.blink-cmp")
+require("plugins.comment")
+require("plugins.conform")
+require("plugins.copilot")
+require("plugins.direnv")
+require("plugins.fzf-lua")
+require("plugins.helm-ls")
+require("plugins.mini")
+require("plugins.neo-tree")
+require("plugins.nvim-treesitter")
+require("plugins.vim-fugitive")
+require("plugins.vim-markdown-toc")
+require("plugins.vim-markdown")
+require("plugins.vim-terraform")

@@ -1,8 +1,3 @@
-return {
-	"mzlogin/vim-markdown-toc",
-	init = function()
-		vim.cmd([[
-    let g:vmt_list_indent_text = '  '
-    ]])
-	end,
-}
+vim.pack.add({ "https://github.com/mzlogin/vim-markdown-toc" })
+
+vim.g.vmt_list_indent_text = "  "

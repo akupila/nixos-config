@@ -41,7 +41,6 @@ in
       jump
       lua-language-server
       ncdu
-      neovim
       nil
       nodejs
       oh-my-posh
@@ -66,6 +65,13 @@ in
   };
 
   programs = {
+    neovim = {
+      enable = true;
+      plugins = with pkgs.vimPlugins; [
+        nvim-treesitter.withAllGrammars
+      ];
+    };
+
     atuin = {
       enable = true;
       flags = [

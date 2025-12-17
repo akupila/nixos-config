@@ -1,17 +1,8 @@
-return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	event = { "BufReadPost", "BufNewFile" },
-	opts = {
-		highlight = {
-			enable = true,
-		},
-		indent = {
-			enable = true,
-		},
-		auto_install = true,
-	},
-	config = function(_, opts)
-		require("nvim-treesitter.configs").setup(opts)
-	end,
-}
+-- Treesitter parsers are installed via Nix (see home.nix)
+-- This just ensures highlighting is enabled for all filetypes
+
+vim.api.nvim_create_autocmd("FileType", {
+  callback = function(args)
+    pcall(vim.treesitter.start, args.buf)
+  end,
+})

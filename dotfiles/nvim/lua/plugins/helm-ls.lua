@@ -1,4 +1,1 @@
-return {
-	"qvalentin/helm-ls.nvim",
-	ft = "helm",
-}
+vim.pack.add({ "https://github.com/qvalentin/helm-ls.nvim" })

@@ -1,7 +1,3 @@
-return {
-	"numToStr/Comment.nvim",
-	event = "BufRead",
-	config = function()
-		require("Comment").setup({})
-	end,
-}
+vim.pack.add({ "https://github.com/numToStr/Comment.nvim" })
+
+require("Comment").setup({})
