@@ -77,7 +77,7 @@ vim.o.shiftwidth = 2
 
 vim.wo.spell = true
 vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "nvim_treesitter#foldexpr()"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- LSP --
 vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
@@ -137,8 +137,6 @@ require("plugins.fzf-lua")
 require("plugins.helm-ls")
 require("plugins.mini")
 require("plugins.neo-tree")
-require("plugins.nvim-treesitter")
 require("plugins.vim-fugitive")
 require("plugins.vim-markdown-toc")
-require("plugins.vim-markdown")
-require("plugins.vim-terraform")
+require("plugins.vim-table-mode")
