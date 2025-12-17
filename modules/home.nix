@@ -197,7 +197,11 @@ in
         };
         git = {
           private-commits = "description(glob:'wip:*')";
-          push-new-bookmarks = true;
+        };
+        remotes = {
+          origin = {
+            auto-track-bookmarks = "glob:*";
+          };
         };
         colors = {
           "diff removed token" = {
