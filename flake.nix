@@ -11,11 +11,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ darwin, nixpkgs, home-manager, ... }:
+  outputs = inputs@{ darwin, nixpkgs, home-manager, neovim-nightly-overlay, ... }:
     let
       user = "akupila";
+      overlays = [ neovim-nightly-overlay.overlays.default ];
     in
     {
       # Personal laptop
@@ -25,6 +30,7 @@
           inherit inputs user;
         };
         modules = [
+          { nixpkgs.overlays = overlays; }
           home-manager.darwinModules.home-manager
           ./modules/default.nix
           ./modules/darwin.nix
@@ -39,6 +45,7 @@
           inherit inputs user;
         };
         modules = [
+          { nixpkgs.overlays = overlays; }
           home-manager.darwinModules.home-manager
           ./modules/default.nix
           ./modules/darwin.nix
