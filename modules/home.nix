@@ -42,7 +42,7 @@ in
       lua-language-server
       ncdu
       nil
-      nodejs
+      nodejs_24
       oh-my-posh
       podman
       pv
