@@ -187,6 +187,9 @@ in
           name = "Antti Kupila";
           email = "akupila@gmail.com";
         };
+        aliases = {
+          "init" = [ "git" "init" ];
+        };
         signing = {
           behavior = "force";
           backend = "ssh";
