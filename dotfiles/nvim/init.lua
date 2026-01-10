@@ -85,6 +85,13 @@ vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
 vim.api.nvim_create_autocmd("LspAttach", {
 	callback = function(args)
 		local buf = args.buf
+		local client = vim.lsp.get_client_by_id(args.data.client_id)
+
+		-- Only set up mappings for language servers (skip copilot) as otherwise we
+		-- may get duplicate entries in quickfix for gd.
+		if not client or client.name == "copilot" or client.name == "copilot_lsp" then
+			return
+		end
 
 		vim.bo[buf].formatprg = nil
 		vim.bo[buf].omnifunc = nil
