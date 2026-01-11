@@ -237,6 +237,7 @@ in
         gs = "git status";
         l = "ls -alh";
         docker = "podman";
+        ssh = "TERM=xterm-256color ssh";
       };
       history = {
         ignorePatterns = [ "exit" "rm *" ];
