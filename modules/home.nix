@@ -61,6 +61,7 @@ in
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
     oh-my-posh = dotfiles "oh-my-posh";
+    ripgrep = dotfiles "ripgrep";
   };
 
   programs = {
@@ -263,6 +264,7 @@ in
         export PATH=$PATH:~/go/bin
         export PATH=$PATH:~/.cargo/bin
         export TMPDIR=/tmp
+        export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config
 
         eval "$(${pkgs.jump}/bin/jump shell zsh)"
 
