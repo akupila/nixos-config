@@ -44,7 +44,6 @@ in
       nil
       nodejs_24
       oh-my-posh
-      podman
       pv
       ripgrep
       tree
@@ -236,7 +235,6 @@ in
         gp = "git log --stat --max-count=1 --format=medium";
         gs = "git status";
         l = "ls -alh";
-        docker = "podman";
         ssh = "TERM=xterm-256color ssh";
       };
       history = {
