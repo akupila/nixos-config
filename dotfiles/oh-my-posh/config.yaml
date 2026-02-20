@@ -53,7 +53,7 @@ blocks:
           disable_with_jj: true
       - type: jujutsu
         foreground: "p:green"
-        template: " {{ .ClosestBookmarks }} {{ .ChangeID }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}"
+        template: " {{ .ChangeID }}{{ if .Working.Changed }} {{ .Working.String }}{{ end }}"
         options:
           fetch_status: true
           change_id_min_len: 2
@@ -67,11 +67,6 @@ blocks:
   - type: rprompt
     alignment: right
     segments:
-      - type: executiontime
-        foreground: "p:comment"
-        template: "{{ .FormattedMs }}"
-        options:
-          threshold: 2000
       - type: shell
         foreground: "p:yellow"
         template: "{{ if gt .Jobs 0 }} {{ .Jobs }}{{ end }}"
