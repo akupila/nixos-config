@@ -273,6 +273,9 @@ in
           source "$LOCAL_CONFIG"
         fi
 
+        # Clear inherited oh-my-posh env vars so init doesn't silently skip
+        # when the shell is spawned from a parent that already ran oh-my-posh.
+        unset POSH_SHELL POSH_SESSION_ID POWERLINE_COMMAND
         eval "$(oh-my-posh init zsh --config ~/.config/oh-my-posh/config.yaml)"
       '';
     };
