@@ -204,7 +204,7 @@ in
         };
         remotes = {
           origin = {
-            auto-track-bookmarks = "glob:*";
+            auto-track-bookmarks = "main";
           };
         };
         colors = {
