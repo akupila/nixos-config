@@ -200,6 +200,7 @@ in
         };
         git = {
           private-commits = "description(glob:'wip:*')";
+          abandon-unreachable-commits = true;
         };
         remotes = {
           origin = {
