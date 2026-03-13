@@ -24,6 +24,7 @@
           sops
           terraform
           terraform-ls
+          uv
           vault
         ];
       };
