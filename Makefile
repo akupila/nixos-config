@@ -4,8 +4,11 @@ switch:
 
 .PHONY: cache
 cache:
-	nix flake archive --json \
-  | jq -r '.path,(.inputs|to_entries[].value.path)' \
+	nix build \
+    .#darwinConfigurations.Anttis-MBP.system \
+    .#darwinConfigurations.akupila-M-CQ3LG7V9X3.system \
+    --json \
+  | jq -r '.[].outputs | to_entries[].value' \
   | cachix push akupila-nixos-config
 
 .PHONY: clean
