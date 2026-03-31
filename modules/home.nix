@@ -92,7 +92,6 @@ in
     git = {
       enable = true;
       ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ".claude/settings.local.json" ];
-      signing.key = null;
       signing.format = null;
       attributes = [
         "go.sum merge=union"
@@ -107,12 +106,10 @@ in
         user = {
           email = "akupila@gmail.com";
           name = "Antti Kupila";
+          signingkey = "~/.ssh/id_ed25519.pub";
         };
         branch = {
           sort = "-committerdate";
-        };
-        color = {
-          ui = "auto";
         };
         commit = {
           gpgSign = true;
@@ -170,9 +167,6 @@ in
         };
         url = {
           "git@github.com:".insteadOf = "https://github.com";
-        };
-        user = {
-          signingkey = "~/.ssh/id_ed25519.pub";
         };
       };
     };
