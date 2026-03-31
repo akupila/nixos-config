@@ -44,7 +44,6 @@ vim.o.backupcopy = "yes"
 vim.o.clipboard = "unnamed"
 vim.o.cursorline = true
 vim.o.expandtab = true
-vim.o.foldlevelstart = 99
 vim.o.hidden = true
 vim.o.ignorecase = true
 vim.o.laststatus = 3
@@ -73,13 +72,20 @@ vim.opt.listchars = {
 vim.o.tabstop = 2
 vim.o.softtabstop = 2
 vim.o.shiftwidth = 2
+vim.o.foldlevelstart = 99
 
 vim.wo.spell = true
 vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- LSP --
-require("plugins.mason") -- Must run before vim.lsp.enable so mason bin is on PATH
+-- Add mason bin to PATH immediately so LSP servers can be found, then load
+-- the full mason plugin after startup for ensure_installed checks and the UI.
+vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
+vim.api.nvim_create_autocmd("VimEnter", {
+  once = true,
+  callback = function() require("plugins.mason") end,
+})
 vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
