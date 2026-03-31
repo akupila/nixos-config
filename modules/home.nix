@@ -39,7 +39,6 @@ in
 
   xdg.configFile = {
     nvim = dotfiles "nvim";
-    wezterm = dotfiles "wezterm";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
     oh-my-posh = dotfiles "oh-my-posh";

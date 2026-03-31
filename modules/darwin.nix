@@ -4,7 +4,6 @@
   fonts.packages = [
     pkgs.nerd-fonts.sauce-code-pro
     pkgs.nerd-fonts.hack
-    pkgs.nerd-fonts.jetbrains-mono # Default for WezTerm
   ];
 
   environment = {
