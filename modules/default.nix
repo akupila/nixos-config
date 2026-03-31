@@ -7,6 +7,7 @@
       user
     ];
     experimental-features = "nix-command flakes";
+    warn-dirty = false;
     substituters = [
       "https://akupila-nixos-config.cachix.org"
     ];
