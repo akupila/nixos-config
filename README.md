@@ -56,25 +56,24 @@ hands-off, except for entering the sudo password once.
 
 We're done! 🎉
 
-We can now open [WezTerm], which provides some nice features and true color
+We can now open [Ghostty], which provides some nice features and true color
 support. We now also have `git` so we don't need to do the `nix-shell` trick
 anymore. We can now start [Neovim] with `nvim`, which will install its own
 plugins.
 
-For updates, we can modify the files in `~/nixos-config` and apply the changes:
+For updates, modify the files in `~/nixos-config` and apply the changes:
 
 ```zsh
-$ darwin-rebuild switch --flake ~/nixos-config
+$ make switch
 ```
 
-If files are added or renamed, they need to be added the git staging are first
-(no need to commit): `git add .`.
+If files are added or renamed, they need to be added to the git staging area
+first (no need to commit): `git add .`.
 
 
 
 [NixOS]: https://nixos.org
 [UTM]: https://mac.getutm.app
 [install nix]: https://nixos.org/download.html
-[Homebrew]: https://brew.sh
-[WezTerm]: https://wezfurlong.org/wezterm/index.html
+[Ghostty]: https://ghostty.org
 [Neovim]: https://neovim.io
