@@ -93,6 +93,7 @@ in
       enable = true;
       ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ".claude/settings.local.json" ];
       signing.key = null;
+      signing.format = null;
       attributes = [
         "go.sum merge=union"
         "go.work.sum merge=union"
