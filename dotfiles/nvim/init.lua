@@ -48,7 +48,6 @@ vim.o.foldlevelstart = 99
 vim.o.hidden = true
 vim.o.ignorecase = true
 vim.o.laststatus = 3
-vim.o.lazyredraw = true
 vim.o.list = true
 vim.o.magic = false
 vim.o.number = true
@@ -120,7 +119,6 @@ vim.diagnostic.config({
 	virtual_text = false,
 	float = {
 		source = "always",
-		border = "rounded",
 		focusable = false,
 	},
 	update_in_insert = true,
