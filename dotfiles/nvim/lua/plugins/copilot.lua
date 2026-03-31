@@ -8,7 +8,7 @@ vim.api.nvim_create_autocmd("InsertEnter", {
         auto_trigger = true,
         debounce = 75,
         keymap = {
-          accept = "<M-l>",
+          accept = "<C-l>",
           accept_word = false,
           accept_line = false,
           next = "<M-j>",
@@ -19,12 +19,3 @@ vim.api.nvim_create_autocmd("InsertEnter", {
     })
   end,
 })
-
-vim.keymap.set("i", "<Tab>", function()
-  local ok, suggestion = pcall(require, "copilot.suggestion")
-  if ok and suggestion.is_visible() then
-    suggestion.accept()
-  else
-    vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Tab>", true, false, true), "n", false)
-  end
-end, { desc = "Accept copilot suggestion" })
