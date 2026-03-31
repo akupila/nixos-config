@@ -5,24 +5,6 @@ let
     source = ./../dotfiles/${path};
     recursive = true;
   };
-
-  oh-my-posh = pkgs.stdenv.mkDerivation rec {
-    pname = "oh-my-posh";
-    version = "28.3.0";
-
-    src = pkgs.fetchurl {
-      url = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/download/v${version}/posh-darwin-arm64";
-      sha256 = "sha256-67mFYXWAHDdxK3YZKPnEnfBAKUtd9MDci6JLfttmEGU=";
-    };
-
-    dontUnpack = true;
-
-    installPhase = ''
-      mkdir -p $out/bin
-      cp $src $out/bin/oh-my-posh
-      chmod +x $out/bin/oh-my-posh
-    '';
-  };
 in
 {
   home = {
