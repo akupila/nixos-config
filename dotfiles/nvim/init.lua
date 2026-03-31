@@ -127,7 +127,7 @@ vim.diagnostic.config({
 		source = "always",
 		focusable = false,
 	},
-	update_in_insert = true,
+	update_in_insert = false,
 	severity_sort = true,
 })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostics" })
