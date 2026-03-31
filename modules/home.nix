@@ -21,7 +21,6 @@ in
       htop
       jq
       jump
-      lua-language-server
       ncdu
       nil
       nodejs_24

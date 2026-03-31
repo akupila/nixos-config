@@ -80,6 +80,7 @@ vim.wo.foldmethod = "expr"
 vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 -- LSP --
+require("plugins.mason") -- Must run before vim.lsp.enable so mason bin is on PATH
 vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
