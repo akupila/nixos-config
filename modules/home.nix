@@ -164,7 +164,6 @@ in
         };
         aliases = {
           "init" = [ "git" "init" ];
-          "feat" = [ "new" "trunk()" ];
         };
         signing = {
           behavior = "force";
@@ -179,7 +178,7 @@ in
           abandon-unreachable-commits = true;
         };
         remotes.origin = {
-          auto-track-bookmarks = "glob:*";
+          auto-track-bookmarks = "main";
         };
         colors = {
           "diff removed token" = {
