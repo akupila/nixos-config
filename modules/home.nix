@@ -15,6 +15,7 @@ in
       cargo
       coreutils
       fd
+      gh
       gnupg
       go
       graphviz
