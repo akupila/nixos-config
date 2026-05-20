@@ -4,6 +4,9 @@ local fzf = require("fzf-lua")
 
 fzf.setup({
   winopts = {
+    -- Neovim nightly: nvim_open_win0 may return nil (nvim_win_call), then
+    -- utils.wo[nil] crashes in __index. Disabling backdrop skips that path.
+    backdrop = false,
     width = 0.9,
     height = 0.9,
     preview = {
