@@ -83,8 +83,10 @@ vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- the full mason plugin after startup for ensure_installed checks and the UI.
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 vim.api.nvim_create_autocmd("VimEnter", {
-  once = true,
-  callback = function() require("plugins.mason") end,
+	once = true,
+	callback = function()
+		require("plugins.mason")
+	end,
 })
 vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
 
@@ -139,6 +141,7 @@ vim.api.nvim_create_user_command("W", "w", {})
 
 -- Plugins --
 require("plugins.nvim-notify") -- Load first so vim.notify is available
+
 require("plugins.ayu")
 require("plugins.blink-cmp")
 require("plugins.comment")
@@ -147,6 +150,7 @@ require("plugins.copilot")
 require("plugins.direnv")
 require("plugins.fzf-lua")
 require("plugins.helm-ls")
+require("plugins.jjannotate")
 require("plugins.mini")
 require("plugins.neo-tree")
 require("plugins.vim-fugitive")
