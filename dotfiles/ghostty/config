@@ -14,6 +14,7 @@ shell-integration-features = no-cursor, ssh-terminfo, ssh-env
 
 macos-titlebar-style = tabs
 mouse-hide-while-typing = true
+progress-style = false
 
 unfocused-split-opacity = 0.6
 split-divider-color = #353840
