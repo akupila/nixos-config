@@ -140,8 +140,6 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { desc = "Next diagnostic" }
 vim.api.nvim_create_user_command("W", "w", {})
 
 -- Plugins --
-require("plugins.nvim-notify") -- Load first so vim.notify is available
-
 require("plugins.ayu")
 require("plugins.blink-cmp")
 require("plugins.comment")
