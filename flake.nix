@@ -38,8 +38,22 @@
         ];
       };
 
-      # Work laptop
+      # Work laptops
       darwinConfigurations.akupila-M-CQ3LG7V9X3 = darwin.lib.darwinSystem {
+        system = "aarch64-darwin";
+        specialArgs = {
+          inherit inputs user;
+        };
+        modules = [
+          { nixpkgs.overlays = overlays; }
+          home-manager.darwinModules.home-manager
+          ./modules/default.nix
+          ./modules/darwin.nix
+          ./modules/work.nix
+        ];
+      };
+
+      darwinConfigurations.akupila-M-CD6FWKT6W0 = darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         specialArgs = {
           inherit inputs user;
