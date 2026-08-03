@@ -23,7 +23,6 @@ in
       jq
       jump
       ncdu
-      nil
       nodejs_24
       oh-my-posh
       pv
@@ -36,6 +35,12 @@ in
 
     stateVersion = "23.11";
   };
+
+  # Cargo's built-in git client fails with url.insteadOf → SSH; use system git.
+  home.file.".cargo/config.toml".text = ''
+    [net]
+    git-fetch-with-cli = true
+  '';
 
   xdg.configFile = {
     nvim = dotfiles "nvim";
