@@ -79,7 +79,15 @@ in
 
     git = {
       enable = true;
-      ignores = [ ".DS_Store" ".envrc" ".direnv" ".local*" "shell.nix" ".claude/settings.local.json" ];
+      ignores = [
+        ".DS_Store"
+        ".envrc"
+        ".direnv"
+        ".local*"
+        "shell.nix"
+        ".plan"
+        ".claude/settings.local.json"
+      ];
       signing.format = null;
       attributes = [
         "go.sum merge=union"
