@@ -86,6 +86,7 @@ in
         ".local*"
         "shell.nix"
         ".plan"
+        ".tmp"
         ".claude/settings.local.json"
       ];
       signing.format = null;
