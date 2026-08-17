@@ -13,6 +13,7 @@ shell-integration = zsh
 shell-integration-features = no-cursor, ssh-terminfo, ssh-env
 
 macos-titlebar-style = tabs
+macos-option-as-alt = true
 mouse-hide-while-typing = true
 progress-style = false
 
