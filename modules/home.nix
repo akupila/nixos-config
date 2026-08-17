@@ -75,6 +75,8 @@ in
 
     fzf = {
       enable = true;
+      # Atuin owns Ctrl-R; keep fzf for Ctrl-T / Alt-C etc.
+      historyWidget.command = "";
     };
 
     git = {
