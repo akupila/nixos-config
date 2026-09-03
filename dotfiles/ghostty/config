@@ -10,7 +10,7 @@ cursor-style-blink = false
 theme = ayu
 
 shell-integration = zsh
-shell-integration-features = no-cursor, ssh-terminfo, ssh-env
+shell-integration-features = no-cursor
 
 macos-titlebar-style = tabs
 macos-option-as-alt = true
