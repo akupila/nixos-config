@@ -1,10 +1,6 @@
 -- Mappings --
 vim.g.mapleader = ","
 
--- Alternate file with Q insted of Ex mode
-vim.keymap.set("n", "Q", "<C-^>")
-vim.keymap.set("v", "Q", "")
-
 -- Exit insert mode with jk
 vim.keymap.set("i", "jk", "<esc>")
 
@@ -64,9 +60,9 @@ vim.o.updatetime = 250
 vim.o.winborder = "rounded"
 
 vim.opt.listchars = {
-	tab = "⎸ ",
-	trail = ".",
-	nbsp = ".",
+  tab = "⎸ ",
+  trail = ".",
+  nbsp = ".",
 }
 
 vim.o.tabstop = 2
@@ -83,38 +79,38 @@ vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 -- the full mason plugin after startup for ensure_installed checks and the UI.
 vim.env.PATH = vim.fn.stdpath("data") .. "/mason/bin:" .. vim.env.PATH
 vim.api.nvim_create_autocmd("VimEnter", {
-	once = true,
-	callback = function()
-		require("plugins.mason")
-	end,
+  once = true,
+  callback = function()
+    require("plugins.mason")
+  end,
 })
 vim.lsp.enable({ "gopls", "clangd", "lua_ls", "nil_ls", "terraform-ls" })
 
 vim.api.nvim_create_autocmd("LspAttach", {
-	callback = function(args)
-		local buf = args.buf
-		local client = vim.lsp.get_client_by_id(args.data.client_id)
+  callback = function(args)
+    local buf = args.buf
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
 
-		-- Only set up mappings for language servers (skip copilot) as otherwise we
-		-- may get duplicate entries in quickfix for gd.
-		if not client or client.name == "copilot" or client.name == "copilot_lsp" then
-			return
-		end
+    -- Only set up mappings for language servers (skip copilot) as otherwise we
+    -- may get duplicate entries in quickfix for gd.
+    if not client or client.name == "copilot" or client.name == "copilot_lsp" then
+      return
+    end
 
-		vim.bo[buf].formatprg = nil
-		vim.bo[buf].omnifunc = nil
+    vim.bo[buf].formatprg = nil
+    vim.bo[buf].omnifunc = nil
 
-		vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, desc = "LSP Go to definition" })
-		vim.keymap.set("n", "gla", vim.lsp.buf.code_action, { buffer = buf, desc = "LSP Code action" })
-		vim.keymap.set("n", "gln", vim.lsp.buf.rename, { buffer = buf, desc = "LSP Rename" })
-		vim.keymap.set({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, { buffer = buf, desc = "LSP Signature help" })
+    vim.keymap.set("n", "gd", vim.lsp.buf.definition, { buffer = buf, desc = "LSP Go to definition" })
+    vim.keymap.set("n", "gla", vim.lsp.buf.code_action, { buffer = buf, desc = "LSP Code action" })
+    vim.keymap.set("n", "gln", vim.lsp.buf.rename, { buffer = buf, desc = "LSP Rename" })
+    vim.keymap.set({ "n", "i" }, "<C-s>", vim.lsp.buf.signature_help, { buffer = buf, desc = "LSP Signature help" })
 
-		local ok, fzf = pcall(require, "fzf-lua")
-		if ok then
-			vim.keymap.set("n", "glr", fzf.lsp_references, { buffer = buf, desc = "LSP References" })
-			vim.keymap.set("n", "gli", fzf.lsp_implementations, { buffer = buf, desc = "LSP Implementation" })
-		end
-	end,
+    local ok, fzf = pcall(require, "fzf-lua")
+    if ok then
+      vim.keymap.set("n", "glr", fzf.lsp_references, { buffer = buf, desc = "LSP References" })
+      vim.keymap.set("n", "gli", fzf.lsp_implementations, { buffer = buf, desc = "LSP Implementation" })
+    end
+  end,
 })
 
 -- Prevent log growing infinitely. Set "debug" when needed.
@@ -122,15 +118,15 @@ vim.lsp.log.set_level(vim.log.levels.OFF)
 
 -- Diagnostics --
 vim.diagnostic.config({
-	underline = true,
-	signs = true,
-	virtual_text = false,
-	float = {
-		source = "always",
-		focusable = false,
-	},
-	update_in_insert = false,
-	severity_sort = true,
+  underline = true,
+  signs = true,
+  virtual_text = false,
+  float = {
+    source = "always",
+    focusable = false,
+  },
+  update_in_insert = false,
+  severity_sort = true,
 })
 vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostics" })
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev, { desc = "Previous diagnostic" })

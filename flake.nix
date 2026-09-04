@@ -12,7 +12,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
+      # NVIM v0.13.0-dev-1511+g5209695703 (2026-09-03)
+      url = "github:nix-community/neovim-nightly-overlay/64881b6f6207e36da03010d011d438829230e29a";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
