@@ -43,9 +43,10 @@ in
   '';
 
   xdg.configFile = {
-    nvim = dotfiles "nvim";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
+    jjui = dotfiles "jjui";
+    nvim = dotfiles "nvim";
     oh-my-posh = dotfiles "oh-my-posh";
     ripgrep = dotfiles "ripgrep";
   };
