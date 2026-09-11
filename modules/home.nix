@@ -43,6 +43,7 @@ in
   '';
 
   xdg.configFile = {
+    "nixpkgs/config.nix".text = "{ allowUnfree = true; }";
     atuin = dotfiles "atuin";
     ghostty = dotfiles "ghostty";
     jjui = dotfiles "jjui";

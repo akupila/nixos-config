@@ -30,6 +30,7 @@
       EDITOR = "nvim";
       VISUAL = "nvim";
       LANG = "en_US.UTF-8";
+      NIXPKGS_ALLOW_UNFREE = "1";
     };
   };
 
