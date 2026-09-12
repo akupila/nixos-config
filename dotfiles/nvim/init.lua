@@ -33,6 +33,8 @@ vim.keymap.set("n", "<C-S-k>", ":m .-2<CR>==")
 
 vim.keymap.set("n", "<left>", ":bprevious<CR>")
 vim.keymap.set("n", "<right>", ":bnext<CR>")
+vim.keymap.set("n", "\\", ":bprevious<CR>")
+vim.keymap.set("n", "|", ":bnext<CR>")
 
 -- Options --
 vim.o.backup = false
