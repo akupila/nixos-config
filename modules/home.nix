@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 
 let
   dotfiles = path: {
@@ -17,7 +17,7 @@ in
       fd
       gh
       gnupg
-      go
+      go_latest
       graphviz
       htop
       jq
