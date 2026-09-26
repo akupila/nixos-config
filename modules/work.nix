@@ -12,6 +12,7 @@
           awscli2
           delta
           envsubst
+          ffmpeg
           fluxcd
           gnutls
           granted
