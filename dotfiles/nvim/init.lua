@@ -35,6 +35,8 @@ vim.keymap.set("n", "<left>", ":bprevious<CR>")
 vim.keymap.set("n", "<right>", ":bnext<CR>")
 vim.keymap.set("n", "\\", ":bprevious<CR>")
 vim.keymap.set("n", "|", ":bnext<CR>")
+vim.keymap.set("n", "<Space>", ":bprevious<CR>")
+vim.keymap.set("n", "<S-Space>", ":bnext<CR>")
 
 -- Options --
 vim.o.backup = false
