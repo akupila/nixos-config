@@ -10,6 +10,7 @@
       home = {
         packages = with pkgs; [
           awscli2
+          (callPackage ../pkgs/cloudsmith-cli.nix { })
           delta
           envsubst
           ffmpeg
