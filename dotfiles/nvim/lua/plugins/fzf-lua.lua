@@ -2,6 +2,17 @@ vim.pack.add({ "https://github.com/ibhagwan/fzf-lua" })
 
 local fzf = require("fzf-lua")
 
+-- Search hidden and gitignored files; exclude junk dirs instead.
+local exclude = table.concat({
+  "--exclude .git",
+  "--exclude .jj",
+  "--exclude node_modules",
+  "--exclude .direnv",
+  "--exclude .venv",
+  "--exclude venv",
+  "--exclude __pycache__",
+}, " ")
+
 fzf.setup({
   winopts = {
     -- Neovim nightly: nvim_open_win0 may return nil (nvim_win_call), then
@@ -15,7 +26,16 @@ fzf.setup({
       title = false,
     },
   },
+  files = {
+    hidden = true,
+    no_ignore = true,
+    toggle_ignore_flag = "--no-ignore-vcs",
+    fd_opts = "--color=never --type f --type l " .. exclude,
+  },
   grep = {
+    hidden = true,
+    no_ignore = true,
+    toggle_ignore_flag = "--no-ignore-vcs",
     winopts = { preview = { layout = "vertical" } },
   },
 })

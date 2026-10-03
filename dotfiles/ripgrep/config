@@ -1,2 +1,9 @@
 --hidden
+--no-ignore-vcs
 --glob=!.git
+--glob=!.jj
+--glob=!node_modules
+--glob=!.direnv
+--glob=!.venv
+--glob=!venv
+--glob=!__pycache__
