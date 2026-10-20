@@ -5,6 +5,6 @@ pkgs.mkShell {
     lua-language-server
     nil
     nixpkgs-fmt
-    nodejs_20
+    nodejs_24
   ];
 }
